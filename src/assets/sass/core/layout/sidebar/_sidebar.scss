@@ -1,0 +1,147 @@
+.sidebarMenu {
+  z-index: 9999;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  margin-top: 50px;
+  transform: translateX(-100%);
+  transition: transform 250ms ease-in-out;
+  background: $background-sidebar-menu;
+}
+
+.container-navbar{
+  display: flex;
+  gap: 5rem
+}
+
+.container-navbar-mobile{
+  display: flex;
+  gap: 5rem
+}
+
+nav ul li {
+  a {
+    @include responsive-font-size-m;
+    padding-bottom: 5px;
+
+    &.active,
+    &:hover {
+      border-bottom: 2px solid $primary-text-color;
+    }
+  }
+}
+
+.toggleMenu{
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: $fourth-text-color;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: $tertiary-background;
+  padding: 10px;
+}
+
+.menu-bar {
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ #sidebarMenu {
+  transform: translateX(0);
+}
+
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 30px;
+  right: 20px;
+  height: 3rem;
+  width: 3rem;
+}
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 0.5rem;
+  width: 100%;
+  background-color: $fourth-background;
+}
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 0.5rem;
+}
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 0.5rem;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(315deg);
+  margin-top: 20px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+  margin-top: -24px;
+}
+
+.sidebarMenu ul li {
+  a {
+    @include responsive-font-size-m;
+    &.active,
+    &:hover {
+      color: $primary-text-color !important;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}

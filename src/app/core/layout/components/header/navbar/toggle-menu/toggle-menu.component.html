@@ -1,0 +1,14 @@
+<div class="sidebarMenu" [class.show]="isOpen">
+  <ul class="sidebarMenuInner">
+    <li class="text-center">
+      <a (click)="closeMenuAndNavigate()" routerLink="/home" routerLinkActive="active">Inicio</a>
+    </li>
+    <li class="text-center">
+      <a (click)="closeMenuAndNavigate()" routerLink="/movies" routerLinkActive="active">Películas</a>
+    </li>
+    <li class="text-center">
+      <a href="#">botón</a>
+    </li>
+  </ul>
+</div>
+

@@ -1,0 +1,27 @@
+header{
+  background-color: $app-header-background;
+  z-index: 9999;
+}
+
+.container-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: $app-header-base-height;
+  color: $app-header-font-color;
+  padding: 2rem;
+}
+
+.logo {
+  background-image: url(../../../../img/logo@2x.png);
+  background-size: cover;
+  height: 70px;
+  width: 65px;
+}
+
+@media only screen and (max-width: 768px) {
+  header{
+    position: fixed;
+    width: 100%;
+  }
+}

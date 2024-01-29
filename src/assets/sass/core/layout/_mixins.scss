@@ -1,0 +1,40 @@
+@mixin font-size($size) {
+  font-size: $size + rem;
+}
+
+@mixin responsive-font-size-l {
+  @include font-size($desktop-font-size-l);
+
+  @media only screen and (max-width: 768px) {
+    @include font-size($tablet-font-size-l);
+  }
+
+  @media only screen and (max-width: 480px) {
+    @include font-size($mobile-font-size-l);
+  }
+}
+
+@mixin responsive-font-size-m {
+  @include font-size($desktop-font-size-m);
+
+  @media only screen and (max-width: 768px) {
+    @include font-size($tablet-font-size-m);
+  }
+
+  @media only screen and (max-width: 480px) {
+    @include font-size($mobile-font-size-m);
+  }
+}
+
+@mixin responsive-font-size-s {
+  @include font-size($desktop-font-size-s);
+
+  @media only screen and (max-width: 768px) {
+    @include font-size($tablet-font-size-s);
+  }
+
+  @media only screen and (max-width: 480px) {
+    @include font-size($mobile-font-size-s);
+  }
+}
+

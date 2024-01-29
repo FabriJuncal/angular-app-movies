@@ -1,0 +1,64 @@
+// General
+$primary-color: #f5b300;
+$secondary-color: #7d7d7d;
+$tertiary-color: #000000;
+$fourth-color: #ffffff;
+
+
+// Background Colors
+$primary-background: $primary-color;
+$secondary-background: $secondary-color;
+$tertiary-background: $tertiary-color;
+$fourth-background: $fourth-color;
+
+// Box Shadow
+$primary-BoxShadow-color: darken($primary-color, 34.67%);
+
+// Font Type
+$font-family-inter: "Inter", Helvetica;
+
+// Font Colors
+$primary-text-color: #f5b300;
+$secondary-text-color: #7d7d7d;
+$tertiary-text-color: #000000;
+$fourth-text-color: #ffffff;
+
+// Font Base
+$font-size-base: 16px;
+
+// Font Desktop
+$desktop-font-size-l: calc(36px / $font-size-base);
+$desktop-font-size-m: calc(20px / $font-size-base);
+$desktop-font-size-s: calc(16px / $font-size-base);
+
+// Font Tablet
+$tablet-font-size-l: calc(36px / $font-size-base);
+$tablet-font-size-m: calc(25px / $font-size-base);
+$tablet-font-size-s: calc(23px / $font-size-base);
+
+// Font Mobile
+$mobile-font-size-l: calc(36px / $font-size-base);
+$mobile-font-size-m: calc(24px / $font-size-base);
+$mobile-font-size-s: calc(16px / $font-size-base);
+
+// Header
+$app-header-background: #000000;
+$app-header-base-height: 100px !default;
+$app-header-font-color: $fourth-text-color;
+// $app-headerbase-height-mobile: 300px !default;
+
+// Sidebar Menu
+$background-sidebar-menu: #000000;
+$app-sidebar-base-height: 100px !default;
+$app-sidebar-height-mobile: 300px !default;
+
+// Footer
+$app-footer-background: #000000;
+$app-footer-base-height: 50px !default;
+$app-footer-font-color: $fourth-text-color;
+// $app-footer-base-height-mobile: 300px !default;
+
+// Botones
+$app-buton-background: #000000;
+$app-buton-color: #ffffff;
+

@@ -1,0 +1,26 @@
+footer {
+  background-color: $app-footer-background;
+}
+
+.page-footer{
+  margin-top: auto;
+}
+
+.container-footer{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: $app-footer-base-height;
+  color: $app-footer-font-color;
+  width: 100%;
+  background-color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  .container-footer{
+    padding: 1.3rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 4rem;
+  }
+}

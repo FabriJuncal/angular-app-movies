@@ -1,0 +1,30 @@
+<ng-container *ngIf="isLoading$ | async">
+  <app-loader></app-loader>
+</ng-container>
+
+
+  <main class="container" [@fadeInOut]>
+    <div>
+      <h1 class="title primary-text-color text-center">Películas</h1>
+      <p class="text-secondary secondary-text-color text-center">
+        Buscá cualquier película que deseas
+      </p>
+    </div>
+    <div class="flex-center">
+      <app-search (search)="performSearch($event)"></app-search>
+    </div>
+    <br>
+    <div class="margin" *ngIf="(isLoading$ | async) === false">
+      <div [@fadeInOut]>
+        <app-table [data]="movies" [columns]="columns"></app-table>
+      </div>
+      <ng-container *ngIf="!movies">
+        <div [@fadeInOutAndScale]>
+          <h1 class="title primary-text-color text-center">Ups! No pudimos encontrar ningúna película <i class="bi bi-emoji-frown-fill"></i></h1>
+          <p class="text-secondary secondary-text-color text-center">
+            Intentá con otro título.
+          </p>
+        </div>
+      </ng-container>
+    </div>
+  </main>

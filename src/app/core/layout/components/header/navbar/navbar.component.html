@@ -1,0 +1,15 @@
+<nav *ngIf="isDesktop; else mobileNav">
+  <!-- Navbar para computadoras -->
+  <ul class="container-navbar">
+    <li><a class="effect" routerLink="/home" routerLinkActive="active">Inicio</a></li>
+    <li><a class="effect" routerLink="/movies" routerLinkActive="active">Películas</a></li>
+    <li><a class="effect" href="#">botón</a></li>
+  </ul>
+</nav>
+
+<ng-template #mobileNav>
+  <!-- Botón de hamburguesa para dispositivos móviles -->
+  <app-hamburger-button></app-hamburger-button>
+  <!-- Menú desplegable para dispositivos móviles -->
+  <app-toggle-menu></app-toggle-menu>
+</ng-template>

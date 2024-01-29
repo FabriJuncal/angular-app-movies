@@ -1,0 +1,23 @@
+<ng-container *ngIf="isLoading$ | async">
+  <app-loader></app-loader>
+</ng-container>
+
+<ng-container *ngIf="(isLoading$ | async) === false">
+  <main class="container" [@fadeInOut]>
+    <div>
+      <h1 class="title primary-text-color text-center">{{ mainContent.title }}</h1>
+      <p class="text-secondary secondary-text-color text-center">
+        {{ mainContent.textSecondary }}
+      </p>
+    </div>
+    <div class="componente-informativo">
+      <img class="caritas-negras" src="./assets/img/caritas-negras@2x.png" alt="caritas negras" />
+      <div class="flex-col">
+        <div class="title tertiary-text-color">
+          {{ mainContent.textinformation }}
+        </div>
+        <div class="btn btn-primary large">botón</div>
+      </div>
+    </div>
+  </main>
+</ng-container>

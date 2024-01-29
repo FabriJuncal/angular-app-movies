@@ -1,0 +1,26 @@
+<div class="contain-table" *ngIf="data && data.length > 0">
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columns" (click)="onSort(column)" [attr.data-column-label]="column.label">
+          {{ column.label }}
+          <span *ngIf="sortColumn === column.name && column.type !== 'image'">
+            <i class="{{ sortDirection === 'asc' ? 'bi bi-arrow-up-short' : 'bi bi-arrow-down-short' }}"></i>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td *ngFor="let column of columns">
+          <ng-container *ngIf="column.type === 'text'; else image">
+            {{ item[column.name] }}
+          </ng-container>
+          <ng-template #image>
+            <img [src]="item[column.name]" alt="Image" />
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
