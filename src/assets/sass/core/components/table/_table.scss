@@ -25,6 +25,10 @@ table {
 
   thead {
     cursor: pointer;
+
+    th{
+      min-width: 7rem;
+    }
   }
 
   tr {
@@ -56,20 +60,11 @@ table {
     display: none;
   }
 
-  tbody{
+  tbody {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .header {
-    background-color: transparent;
-    color: lighten($primary-background, 60%);
-    font-size: 2em;
-    font-weight: 700;
-    padding: 0;
-    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
   }
 
   tr {
@@ -83,27 +78,22 @@ table {
 
   td {
     &:first-child {
-        background-color: $primary-background;
-        // border-bottom: 1px solid lighten($primary-background, 30%);
-        border-radius: $borderRadius $borderRadius 0 0;
-        // position: relative;
-        top: 0;
-        // transform: translateY(0);
-        width: 100%;
-        overflow: hidden;
-        padding: 0;
+      background-color: $primary-background;
+      border-radius: $borderRadius $borderRadius 0 0;
+      width: 100%;
+      overflow: hidden;
+      padding: 0;
     }
 
     &:not(:first-child) {
-        margin: 0;
-        padding: 5px 1em;
-        width: 100%;
-        text-align: center;
-        &:before {
-          font-size: .8em;
-          padding-top: 0.3em;
-          // position: relative;
-        }
+      margin: 0;
+      padding: 5px 1em;
+      width: 100%;
+
+      &:before {
+        font-size: .8em;
+        padding-top: 0.3em;
+      }
     }
 
     &:nth-child(2) { margin-top: 1rem; }
@@ -116,7 +106,6 @@ table {
     }
   }
 
-
   .contain-table {
     border: none;
     box-shadow: none;
@@ -124,8 +113,8 @@ table {
   }
 }
 
-@media screen and (max-width: 500px){
-  tr{
+@media screen and (max-width: 500px) {
+  tr {
     width: 80%;
     min-height: 350px;
   }

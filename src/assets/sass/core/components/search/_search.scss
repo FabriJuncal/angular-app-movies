@@ -7,15 +7,15 @@
   width: 100%;
   border: 3px solid $primary-background;
   border-right: none;
-  padding: 5px;
+  padding: 1rem;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: $primary-text-color;
   @include responsive-font-size-m;
-}
 
-.searchTerm:focus{
-  color: $tertiary-text-color;
+  &:focus {
+    color: $tertiary-text-color;
+  }
 }
 
 .searchButton {

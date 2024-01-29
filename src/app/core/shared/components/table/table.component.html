@@ -5,7 +5,7 @@
         <th *ngFor="let column of columns" (click)="onSort(column)" [attr.data-column-label]="column.label">
           {{ column.label }}
           <span *ngIf="sortColumn === column.name && column.type !== 'image'">
-            <i class="{{ sortDirection === 'asc' ? 'bi bi-arrow-up-short' : 'bi bi-arrow-down-short' }}"></i>
+            <i class="bi" [ngClass]="{'bi-arrow-up-short': sortDirection === 'asc', 'bi-arrow-down-short': sortDirection === 'desc'}"></i>
           </span>
         </th>
       </tr>
@@ -17,7 +17,10 @@
             {{ item[column.name] }}
           </ng-container>
           <ng-template #image>
-            <img [src]="item[column.name]" alt="Image" />
+            <img *ngIf="item[column.name] && item[column.name] !== 'N/A'" [src]="item[column.name]" alt="Image" />
+            <ng-container *ngIf="!item[column.name] || item[column.name] === 'N/A'">
+              Sin imagen
+            </ng-container>
           </ng-template>
         </td>
       </tr>

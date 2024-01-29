@@ -1,4 +1,4 @@
-<div class="sidebarMenu" [class.show]="isOpen">
+<nav class="sidebarMenu" [class.show]="isOpen">
   <ul class="sidebarMenuInner">
     <li class="text-center">
       <a (click)="closeMenuAndNavigate()" routerLink="/home" routerLinkActive="active">Inicio</a>
@@ -10,5 +10,4 @@
       <a (click)="closeMenuAndNavigate()">Nosotros</a>
     </li>
   </ul>
-</div>
-
+</nav>

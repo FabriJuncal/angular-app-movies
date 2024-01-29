@@ -24,6 +24,10 @@
   @media only screen and (max-width: 480px) {
     @include font-size($mobile-font-size-m);
   }
+
+  @media only screen and (max-width: 370px) {
+    @include font-size($mobile-font-size-s);
+  }
 }
 
 @mixin responsive-font-size-s {

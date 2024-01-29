@@ -1,13 +1,13 @@
 <div class="search">
-    <input
+  <input
     type="text"
     class="searchTerm"
-    placeholder="Realizá tu busqueda!!!"
+    placeholder="Realizá tu búsqueda!!!"
     [(ngModel)]="searchQuery"
     (keyup.enter)="onSearch()"
     #searchInput
-    >
-    <button class="searchButton" (click)="onSearch()">
+  />
+  <button class="searchButton" (click)="onSearch()">
     <i class="bi bi-search"></i>
   </button>
 </div>

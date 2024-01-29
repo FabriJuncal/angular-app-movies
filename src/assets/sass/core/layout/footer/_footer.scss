@@ -1,3 +1,5 @@
+/* Estilos del Footer */
+
 footer {
   background-color: $app-footer-background;
 }
@@ -14,13 +16,21 @@ footer {
   color: $app-footer-font-color;
   width: 100%;
   background-color: black;
-}
 
-@media only screen and (max-width: 768px) {
-  .container-footer{
+  @media only screen and (max-width: 768px) {
     padding: 1.3rem;
     flex-direction: column;
     gap: 0.5rem;
     height: 4rem;
   }
+
+  @media only screen and (max-width: 330px) {
+    padding: 4rem 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 4rem;
+  }
 }
+
+
+
