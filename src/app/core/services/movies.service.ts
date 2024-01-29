@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, finalize } from 'rxjs';
-import { MoviesModel } from '../models/movies.model';
+import { ApiMovieResponse } from '../models/movies.model';
 import { environment } from 'src/environments/environment';
 import { delay } from 'rxjs/operators'; // Se corrigió la importación de 'delay'
 
@@ -36,12 +36,12 @@ export class MoviesService {
    * @param search Término de búsqueda opcional para filtrar películas
    * @returns Un Observable que emite el modelo de películas
    */
-  getMovies(search: string = ''): Observable<MoviesModel> {
+  getMovies(search: string = ''): Observable<ApiMovieResponse> {
     // Indicar que la carga de datos está en curso
     this.isLoadingSubject.next(true);
 
     // Realizar la petición HTTP para obtener películas
-    return this.http.get<MoviesModel>(`${API_MOVIES_URL}&s=${search}`)
+    return this.http.get<ApiMovieResponse>(`${API_MOVIES_URL}&s=${search}`)
       .pipe(
         delay(3000), // Simula el tiempo de ejecución como si fuera una petición con muchos datos
         finalize(() => this.isLoadingSubject.next(false))

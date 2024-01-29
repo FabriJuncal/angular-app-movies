@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { fadeInOut, fadeInOutAndScale } from '../../core/shared/ts/animations';
 import { MoviesService } from '../../core/services/movies.service';
+import { Movie } from '../../core/models/movies.model';
 
 @Component({
   selector: 'app-movies',
@@ -12,7 +13,7 @@ import { MoviesService } from '../../core/services/movies.service';
 
 export class MoviesComponent implements OnInit {
   isLoading$: Observable<boolean>; // Observable para controlar el estado de carga
-  movies: any[] = []; // Arreglo para almacenar las películas obtenidas
+  movies: Movie[] = []; // Arreglo para almacenar las películas obtenidas
 
   // Definición de columnas para la tabla de películas
   columns = [
