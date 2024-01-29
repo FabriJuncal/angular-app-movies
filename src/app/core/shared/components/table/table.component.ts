@@ -1,35 +1,45 @@
+// Importaciones necesarias de Angular
 import { Component, Input } from '@angular/core';
 
+/**
+ * Componente para visualizar datos en forma de tabla.
+ */
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
+  // Datos que se mostrarán en la tabla
   @Input() data: any[] = [];
+  // Definición de columnas de la tabla
   @Input() columns: any[] = [];
 
-  // Propiedad para manejar la ordenación
+  // Propiedades para manejar la ordenación
   sortColumn: string;
   sortDirection: 'asc' | 'desc' = 'asc';
 
+  /**
+   * Método que se ejecuta después de que Angular inicializa el componente.
+   */
   ngOnInit(): void {
-  // Buscar la primera columna que no sea de tipo imagen
-  const firstNonImageColumn = this.columns.find(column => column.type !== 'image');
+    // Buscar la primera columna que no sea de tipo imagen
+    const firstNonImageColumn = this.columns.find(column => column.type !== 'image');
 
-  if (firstNonImageColumn) {
-    // Ordena la 1er columna que no sea de tipo "image  "
-    this.sortColumn = firstNonImageColumn.name;
-    this.sort();
+    if (firstNonImageColumn) {
+      // Ordenar por la primera columna que no sea de tipo "imagen"
+      this.sortColumn = firstNonImageColumn.name;
+      this.sort();
+    }
   }
 
-    console.log('data->', this.data);
-  }
-
-  // Función para manejar clics en los encabezados de columna
+  /**
+   * Función para manejar clics en los encabezados de columna para ordenar.
+   * @param column Columna que se hizo clic.
+   */
   onSort(column: any): void {
-
-    if(!this.data || column.type === 'image'){
+    // Evitar ordenación si no hay datos o si la columna es de tipo "imagen"
+    if (!this.data || column.type === 'image') {
       return;
     }
 
@@ -47,14 +57,17 @@ export class TableComponent {
     this.sort();
   }
 
-  // Función para ordenar los datos
+  /**
+   * Función para ordenar los datos según la columna y dirección especificadas.
+   */
   sort(): void {
-    if(!this.data){
+    // Evitar ordenación si no hay datos
+    if (!this.data) {
       return;
     }
+
     if (this.sortColumn) {
       this.data.sort((a, b) => {
-
         const valueA = a[this.sortColumn] || '';
         const valueB = b[this.sortColumn] || '';
 

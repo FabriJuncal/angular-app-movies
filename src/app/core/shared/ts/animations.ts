@@ -1,5 +1,9 @@
+// Importaciones necesarias de Angular para animaciones
 import { trigger, transition, style, animate } from '@angular/animations';
 
+/**
+ * Animación de desvanecimiento (fade in/out).
+ */
 export const fadeInOut = trigger('fadeInOut', [
   transition(':enter', [
     style({ opacity: 0 }),
@@ -10,7 +14,10 @@ export const fadeInOut = trigger('fadeInOut', [
   ]),
 ]);
 
-export const fadeInOutAndScale  = trigger('fadeInOutAndScale', [
+/**
+ * Animación de desvanecimiento y escala al entrar y salir.
+ */
+export const fadeInOutAndScale = trigger('fadeInOutAndScale', [
   transition(':enter', [
     style({
       opacity: 0,
